@@ -14,7 +14,7 @@ import org.aspectj.lang.annotation.Pointcut;
 @Aspect
 public class IdempotenceAspect {
 
-    @Pointcut("@@annotation(com.fion.idempotence.core.annotation.Idempotence)")
+    @Pointcut("@annotation(com.fion.idempotence.core.annotation.Idempotence)")
     public void idempotence() {}
 
     @Around("idempotence()")
