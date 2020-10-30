@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b17cd8b-8a00-4253-9fd2-b912fd937368" name="Default Changelist" comment="" />
+    <list default="true" id="4b17cd8b-8a00-4253-9fd2-b912fd937368" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/enums/ExtractTokenModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/exception/NoSupportTokenTypeException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/exception/TokenNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/CookieTokenExtractorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/FiledTokenExtractorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/HeaderTokenExtractorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/ParamTokenExtractorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/TokenContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/TokenExtractorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idempotence-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/TokenExtractorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/TokenExtractorHandlerFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/TokenExtractorHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/annotation/Idempotence.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/annotation/Idempotence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/annotation/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/annotation/Token.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/exception/IdempotenceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/exception/IdempotenceException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/repository/ParamTokenExtractorHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +31,7 @@
       <list>
         <option value="AnnotationType" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -40,7 +59,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
@@ -67,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1603940481908</updated>
       <workItem from="1603940486992" duration="17625000" />
-      <workItem from="1604022585208" duration="3673000" />
+      <workItem from="1604022585208" duration="18485000" />
     </task>
     <servers />
   </component>

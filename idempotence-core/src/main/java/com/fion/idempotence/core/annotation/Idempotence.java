@@ -1,5 +1,7 @@
 package com.fion.idempotence.core.annotation;
 
+import com.fion.idempotence.core.enums.ExtractTokenModel;
+
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -17,4 +19,10 @@ import static java.lang.annotation.ElementType.METHOD;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(value = {METHOD})
 public @interface Idempotence {
+
+    ExtractTokenModel model() default ExtractTokenModel.COOKIE;
+
+    String tokenInCookie() default "token";
+
+    String tokenInHeader() default "token";
 }
