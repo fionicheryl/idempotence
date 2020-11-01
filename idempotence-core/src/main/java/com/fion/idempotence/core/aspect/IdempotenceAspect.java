@@ -71,7 +71,7 @@ public class IdempotenceAspect {
             throw new IdempotenceException("The system is processing, please try again later.");
         }
         try {
-            Object result = joinPoint.proceed(joinPoint.getArgs());
+            Object result = joinPoint.proceed(context.getArgs());
         } catch (Throwable t) {
 
         }
