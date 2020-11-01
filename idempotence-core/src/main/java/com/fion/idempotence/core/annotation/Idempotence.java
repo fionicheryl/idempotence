@@ -2,6 +2,8 @@ package com.fion.idempotence.core.annotation;
 
 import com.fion.idempotence.core.handler.CookieTokenExtractorHandler;
 import com.fion.idempotence.core.handler.TokenExtractorHandler;
+import com.fion.idempotence.core.repository.DefaultSupportTokenRepository;
+import com.fion.idempotence.core.repository.TokenRepositoryAdapter;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
@@ -28,6 +30,14 @@ public @interface Idempotence {
      * @return
      */
     Class<? extends TokenExtractorHandler> tokenExtractorHandler() default CookieTokenExtractorHandler.class;
+
+    /**
+     * token存储适配器
+     * 默认使用基于内存的存储
+     *
+     * @return
+     */
+    Class<? extends TokenRepositoryAdapter> tokenRepositoryAdapter() default DefaultSupportTokenRepository.class;
 
     String tokenInCookie() default "token";
 

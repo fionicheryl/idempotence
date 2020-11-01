@@ -1,5 +1,6 @@
 package com.fion.idempotence.core.handler;
 
+import com.fion.idempotence.core.exception.BeanNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
@@ -17,6 +18,9 @@ import java.util.Map;
 @Component
 public class TokenExtractorHandlerFactory {
 
+    /**
+     * token提取器处理器集合
+     */
     private final Map<Class<? extends TokenExtractorHandler>, TokenExtractorHandler> handlersFactory;
 
     /**
@@ -43,7 +47,12 @@ public class TokenExtractorHandlerFactory {
      * @return
      */
     public TokenExtractorHandler getInstance(Class<? extends TokenExtractorHandler> handlerClazz) {
-        return handlersFactory.get(handlerClazz);
+        // 获取提取器处理器
+        TokenExtractorHandler handler = handlersFactory.get(handlerClazz);
+        if (null == handler) {
+            throw new BeanNotFoundException("No matching bean found for " + handlerClazz.getName() + ".");
+        }
+        return handler;
     }
 
 }

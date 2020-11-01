@@ -4,6 +4,8 @@ import com.fion.idempotence.core.annotation.Idempotence;
 import com.fion.idempotence.core.exception.IdempotenceException;
 import com.fion.idempotence.core.handler.TokenExtractorHandler;
 import com.fion.idempotence.core.handler.TokenExtractorHandlerFactory;
+import com.fion.idempotence.core.repository.TokenRepositoryAdapter;
+import com.fion.idempotence.core.repository.TokenRepositoryAdapterFactory;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -44,6 +46,12 @@ public class IdempotenceAspect {
     @Autowired
     private TokenExtractorHandlerFactory tokenExtractorHandlerFactory;
 
+    /**
+     * token存储适配器
+     */
+    @Autowired
+    private TokenRepositoryAdapterFactory tokenRepositoryAdapterFactory;
+
     @Pointcut("@annotation(com.fion.idempotence.core.annotation.Idempotence)")
     public void idempotence() {}
 
@@ -55,8 +63,18 @@ public class IdempotenceAspect {
         TokenExtractorHandler handler = tokenExtractorHandlerFactory.getInstance(context.getIdempotence().tokenExtractorHandler());
         // 提取token，token存放于上下文中
         handler.extract(context);
+        // 获取token存储适配器
+        TokenRepositoryAdapter adapter = tokenRepositoryAdapterFactory.getInstance(context.getIdempotence().tokenRepositoryAdapter());
+        if (null != adapter.get(context.getToken())) {
+            log.info("[Idempotence Check] token already exist, token = " + context.getToken());
+            // token存在，表明幂等
+            throw new IdempotenceException("The system is processing, please try again later.");
+        }
+        try {
+            Object result = joinPoint.proceed(joinPoint.getArgs());
+        } catch (Throwable t) {
 
-
+        }
 
         return null;
     }
