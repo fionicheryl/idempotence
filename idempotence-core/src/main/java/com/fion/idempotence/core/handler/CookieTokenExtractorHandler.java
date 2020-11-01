@@ -1,5 +1,6 @@
 package com.fion.idempotence.core.handler;
 
+import com.fion.idempotence.core.aspect.IdempotenceContext;
 import com.fion.idempotence.core.exception.TokenNotFoundException;
 import org.springframework.stereotype.Component;
 
@@ -22,7 +23,7 @@ public class CookieTokenExtractorHandler implements TokenExtractorHandler{
      * @param context token上下文
      */
     @Override
-    public void extract(TokenContext context) {
+    public void extract(IdempotenceContext context) {
         HttpServletRequest request = context.getRequest();
         if (null == request) {
             throw new TokenNotFoundException("There is no object of HttpServletRequest in the argument list.");

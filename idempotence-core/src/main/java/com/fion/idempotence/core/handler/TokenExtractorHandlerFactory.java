@@ -1,8 +1,8 @@
 package com.fion.idempotence.core.handler;
 
-import com.fion.idempotence.core.enums.ExtractTokenModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.util.CollectionUtils;
 
 import java.util.HashMap;
 import java.util.List;
@@ -17,11 +17,33 @@ import java.util.Map;
 @Component
 public class TokenExtractorHandlerFactory {
 
-    /*private final Map<ExtractTokenModel, TokenExtractorHandler> handlers;
+    private final Map<Class<? extends TokenExtractorHandler>, TokenExtractorHandler> handlersFactory;
 
+    /**
+     * 工厂构造，注入所有token提取器处理器
+     *
+     * @param handlers token提取器处理器
+     */
     @Autowired
     public TokenExtractorHandlerFactory(List<TokenExtractorHandler> handlers) {
-        handlers = new HashMap<>();
-    }*/
+        if (CollectionUtils.isEmpty(handlers)) {
+            this.handlersFactory = new HashMap<>();
+        } else {
+            this.handlersFactory = new HashMap<>(handlers.size());
+            for (TokenExtractorHandler handler : handlers) {
+                this.handlersFactory.put(handler.getClass(), handler);
+            }
+        }
+    }
+
+    /**
+     * 获得token提取器处理器实例
+     *
+     * @param handlerClazz token提取器处理器类
+     * @return
+     */
+    public TokenExtractorHandler getInstance(Class<? extends TokenExtractorHandler> handlerClazz) {
+        return handlersFactory.get(handlerClazz);
+    }
 
 }

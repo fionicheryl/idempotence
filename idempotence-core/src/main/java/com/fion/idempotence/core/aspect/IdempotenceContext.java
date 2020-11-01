@@ -1,4 +1,4 @@
-package com.fion.idempotence.core.handler;
+package com.fion.idempotence.core.aspect;
 
 import com.fion.idempotence.core.annotation.Idempotence;
 
@@ -11,7 +11,7 @@ import java.lang.annotation.Annotation;
  * @author fion yang
  * @date 2020-10-30 14:27
  */
-public class TokenContext {
+public class IdempotenceContext {
 
     /**
      * 幂等注解

@@ -2,22 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b17cd8b-8a00-4253-9fd2-b912fd937368" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/enums/ExtractTokenModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/exception/NoSupportTokenTypeException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/exception/TokenNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/CookieTokenExtractorHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/FiledTokenExtractorHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/HeaderTokenExtractorHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/ParamTokenExtractorHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/TokenContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/TokenExtractorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/config/IdempotenceConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/idempotence-core/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/TokenExtractorFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/TokenExtractorHandlerFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/TokenExtractorHandler.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/annotation/Idempotence.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/annotation/Idempotence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/annotation/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/annotation/Token.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/exception/IdempotenceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/exception/IdempotenceException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/repository/ParamTokenExtractorHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/aspect/IdempotenceAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/aspect/IdempotenceAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/CookieTokenExtractorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/CookieTokenExtractorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/FiledTokenExtractorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/FiledTokenExtractorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/HeaderTokenExtractorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/HeaderTokenExtractorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/ParamTokenExtractorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/ParamTokenExtractorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/TokenContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/aspect/IdempotenceContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/TokenExtractorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/TokenExtractorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/TokenExtractorHandlerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/TokenExtractorHandlerFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,7 +81,8 @@
       <option name="presentableId" value="Default" />
       <updated>1603940481908</updated>
       <workItem from="1603940486992" duration="17625000" />
-      <workItem from="1604022585208" duration="18485000" />
+      <workItem from="1604022585208" duration="19317000" />
+      <workItem from="1604192851149" duration="8266000" />
     </task>
     <servers />
   </component>
@@ -98,7 +94,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

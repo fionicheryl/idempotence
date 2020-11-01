@@ -1,5 +1,7 @@
 package com.fion.idempotence.core.handler;
 
+import com.fion.idempotence.core.aspect.IdempotenceContext;
+
 /**
  * token提取处理器
  *
@@ -14,7 +16,7 @@ public interface TokenExtractorHandler {
      *
      * @param context token上下文
      */
-    void extract(TokenContext context);
+    void extract(IdempotenceContext context);
 
     /**
      * 判断一维数组是否为空

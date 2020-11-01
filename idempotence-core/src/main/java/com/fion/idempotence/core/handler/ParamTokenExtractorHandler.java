@@ -1,6 +1,7 @@
 package com.fion.idempotence.core.handler;
 
 import com.fion.idempotence.core.annotation.Token;
+import com.fion.idempotence.core.aspect.IdempotenceContext;
 import com.fion.idempotence.core.exception.NoSupportTokenTypeException;
 import com.fion.idempotence.core.exception.TokenNotFoundException;
 import org.springframework.stereotype.Component;
@@ -23,7 +24,7 @@ public class ParamTokenExtractorHandler implements TokenExtractorHandler {
      * @param context token上下文
      */
     @Override
-    public void extract(TokenContext context) {
+    public void extract(IdempotenceContext context) {
         Object[] args = context.getArgs();
         if (isEmpty(args)) {
             throw new TokenNotFoundException("Methods have no arguments.");

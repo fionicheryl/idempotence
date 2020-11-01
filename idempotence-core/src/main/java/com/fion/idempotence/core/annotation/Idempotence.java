@@ -1,6 +1,7 @@
 package com.fion.idempotence.core.annotation;
 
-import com.fion.idempotence.core.enums.ExtractTokenModel;
+import com.fion.idempotence.core.handler.CookieTokenExtractorHandler;
+import com.fion.idempotence.core.handler.TokenExtractorHandler;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
@@ -20,7 +21,13 @@ import static java.lang.annotation.ElementType.METHOD;
 @Target(value = {METHOD})
 public @interface Idempotence {
 
-    ExtractTokenModel model() default ExtractTokenModel.COOKIE;
+    /**
+     * token提取器处理器
+     * 默认从cookie中提取
+     *
+     * @return
+     */
+    Class<? extends TokenExtractorHandler> tokenExtractorHandler() default CookieTokenExtractorHandler.class;
 
     String tokenInCookie() default "token";
 
