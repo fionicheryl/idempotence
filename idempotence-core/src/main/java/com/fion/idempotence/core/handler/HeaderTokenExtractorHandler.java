@@ -1,7 +1,9 @@
 package com.fion.idempotence.core.handler;
 
 import com.fion.idempotence.core.aspect.IdempotenceContext;
+import com.fion.idempotence.core.config.IdempotenceConfiguration;
 import com.fion.idempotence.core.exception.TokenNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +17,9 @@ import javax.servlet.http.HttpServletRequest;
 @Component
 public class HeaderTokenExtractorHandler implements TokenExtractorHandler {
 
+    @Autowired
+    private IdempotenceConfiguration configuration;
+
     /**
      * 提取token
      * 提取成功，会将token存放在context中
@@ -27,7 +32,7 @@ public class HeaderTokenExtractorHandler implements TokenExtractorHandler {
         if (null == request) {
             throw new TokenNotFoundException("There is no object of HttpServletRequest in the argument list.");
         }
-        String tokenInHeader = context.getIdempotence().tokenInHeader();
+        String tokenInHeader = configuration.getHeaderTokenName();
         String token = request.getHeader(tokenInHeader);
         if (null == token || "".equals(token)) {
             throw new TokenNotFoundException("There is no " + tokenInHeader + " in headers.");

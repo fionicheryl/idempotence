@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b17cd8b-8a00-4253-9fd2-b912fd937368" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/exception/BeanNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/repository/TokenRepositoryAdapterFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/annotation/Idempotence.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/annotation/Idempotence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/aspect/IdempotenceAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/aspect/IdempotenceAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/TokenExtractorHandlerFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/TokenExtractorHandlerFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/config/IdempotenceConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/config/IdempotenceConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/CookieTokenExtractorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/CookieTokenExtractorHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/HeaderTokenExtractorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/handler/HeaderTokenExtractorHandler.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +79,8 @@
       <updated>1603940481908</updated>
       <workItem from="1603940486992" duration="17625000" />
       <workItem from="1604022585208" duration="19317000" />
-      <workItem from="1604192851149" duration="15094000" />
+      <workItem from="1604192851149" duration="15929000" />
+      <workItem from="1604282069407" duration="4296000" />
     </task>
     <servers />
   </component>

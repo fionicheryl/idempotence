@@ -1,7 +1,9 @@
 package com.fion.idempotence.core.handler;
 
 import com.fion.idempotence.core.aspect.IdempotenceContext;
+import com.fion.idempotence.core.config.IdempotenceConfiguration;
 import com.fion.idempotence.core.exception.TokenNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.Cookie;
@@ -16,6 +18,9 @@ import javax.servlet.http.HttpServletRequest;
 @Component
 public class CookieTokenExtractorHandler implements TokenExtractorHandler{
 
+    @Autowired
+    private IdempotenceConfiguration configuration;
+
     /**
      * 提取token
      * 提取成功，会将token存放在context中
@@ -28,7 +33,7 @@ public class CookieTokenExtractorHandler implements TokenExtractorHandler{
         if (null == request) {
             throw new TokenNotFoundException("There is no object of HttpServletRequest in the argument list.");
         }
-        String tokenInCookie = context.getIdempotence().tokenInCookie();
+        String tokenInCookie = configuration.getCookieTokenName();
         Cookie[] cookies = request.getCookies();
         if (isEmpty(cookies)) {
             throw new TokenNotFoundException("Cookie info is empty.");

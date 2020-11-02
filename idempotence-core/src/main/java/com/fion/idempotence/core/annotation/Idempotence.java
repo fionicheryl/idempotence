@@ -38,8 +38,4 @@ public @interface Idempotence {
      * @return
      */
     Class<? extends TokenRepositoryAdapter> tokenRepositoryAdapter() default DefaultSupportTokenRepository.class;
-
-    String tokenInCookie() default "token";
-
-    String tokenInHeader() default "token";
 }
