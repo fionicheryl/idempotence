@@ -37,15 +37,8 @@ public class IdempotenceConfiguration {
         return cookieTokenName;
     }
 
-    public void setCookieTokenName(String cookieTokenName) {
-        this.cookieTokenName = cookieTokenName;
-    }
-
     public String getHeaderTokenName() {
         return headerTokenName;
     }
 
-    public void setHeaderTokenName(String headerTokenName) {
-        this.headerTokenName = headerTokenName;
-    }
 }
