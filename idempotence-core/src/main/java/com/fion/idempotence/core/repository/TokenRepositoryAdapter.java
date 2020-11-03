@@ -10,11 +10,13 @@ public interface TokenRepositoryAdapter {
 
     /**
      * 设置token
+     * token已存在，则覆盖原token，并且返回原token对应的value
+     * 否则，返回null
      *
      * @param token token
      * @param ttl   生存时间
      */
-    boolean set(String token, long ttl);
+    Object set(String token, long ttl);
 
     /**
      * 获取token

@@ -52,7 +52,7 @@ public class DefaultSupportTokenRepository implements TokenRepositoryAdapter {
      * @param ttl   生存时间
      */
     @Override
-    public boolean set(String token, long ttl) {
+    public Object set(String token, long ttl) {
         return false;
     }
 

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b17cd8b-8a00-4253-9fd2-b912fd937368" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/aspect/IdempotenceAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/aspect/IdempotenceAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/idempotence-core/src/main/java/com/fion/idempotence/core/repository/SingleSupportTokenRepositoryAdapter.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +78,7 @@
       <workItem from="1604022585208" duration="19317000" />
       <workItem from="1604192851149" duration="15929000" />
       <workItem from="1604282069407" duration="6290000" />
-      <workItem from="1604366135187" duration="2171000" />
+      <workItem from="1604366135187" duration="6022000" />
     </task>
     <servers />
   </component>
