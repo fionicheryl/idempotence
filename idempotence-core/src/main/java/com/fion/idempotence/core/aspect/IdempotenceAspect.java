@@ -6,9 +6,9 @@ import com.fion.idempotence.core.handler.TokenExtractorHandler;
 import com.fion.idempotence.core.handler.TokenExtractorHandlerFactory;
 import com.fion.idempotence.core.repository.TokenRepositoryAdapter;
 import com.fion.idempotence.core.repository.TokenRepositoryAdapterFactory;
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,8 +55,8 @@ public class IdempotenceAspect {
     @Pointcut("@annotation(com.fion.idempotence.core.annotation.Idempotence)")
     public void idempotence() {}
 
-    @Around("idempotence()")
-    public Object process(ProceedingJoinPoint joinPoint) {
+    @Before("idempotence()")
+    public void before(JoinPoint joinPoint) {
         // 构建幂等上下文对象
         IdempotenceContext context = buildContext(joinPoint);
         // 获取token提取器处理器
@@ -65,18 +65,18 @@ public class IdempotenceAspect {
         handler.extract(context);
         // 获取token存储适配器
         TokenRepositoryAdapter adapter = tokenRepositoryAdapterFactory.getInstance(context.getIdempotence().tokenRepositoryAdapter());
-        if (null != adapter.get(context.getToken())) {
-            log.info("[Idempotence Check] token already exist, token = " + context.getToken());
-            // token存在，表明幂等
+        // 判断幂等逻辑
+        Object value = adapter.get(context.getToken());
+        if (null == value) {
+            log.info("[Idempotence Check] token does not exist, token = " + context.getToken());
+            // token不存在，表明token伪造或token已被使用
+            throw new IdempotenceException("Token does not exist, please apply for token.");
+        }
+        if (!value.equals(adapter.remove(context.getToken()))) {
+            log.info("[Idempotence Check] token has been removed, token = " + context.getToken());
+            // 删除的值与获取的不相等，表明token已被处理，幂等
             throw new IdempotenceException("The system is processing, please try again later.");
         }
-        try {
-            Object result = joinPoint.proceed(context.getArgs());
-        } catch (Throwable t) {
-
-        }
-
-        return null;
     }
 
     /**
@@ -103,7 +103,7 @@ public class IdempotenceAspect {
      * @param joinPoint
      * @return
      */
-    private IdempotenceContext buildContext(ProceedingJoinPoint joinPoint) {
+    private IdempotenceContext buildContext(JoinPoint joinPoint) {
         // 获取参数
         Object[] args = joinPoint.getArgs();
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
