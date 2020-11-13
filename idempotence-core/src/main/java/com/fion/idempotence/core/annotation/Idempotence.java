@@ -3,6 +3,7 @@ package com.fion.idempotence.core.annotation;
 import com.fion.idempotence.core.handler.CookieTokenExtractorHandler;
 import com.fion.idempotence.core.handler.TokenExtractorHandler;
 import com.fion.idempotence.core.repository.DefaultSupportTokenRepository;
+import com.fion.idempotence.core.repository.SingleSupportTokenRepositoryAdapter;
 import com.fion.idempotence.core.repository.TokenRepositoryAdapter;
 
 import java.lang.annotation.Documented;
@@ -37,5 +38,5 @@ public @interface Idempotence {
      *
      * @return
      */
-    Class<? extends TokenRepositoryAdapter> tokenRepositoryAdapter() default DefaultSupportTokenRepository.class;
+    Class<? extends TokenRepositoryAdapter> tokenRepositoryAdapter() default SingleSupportTokenRepositoryAdapter.class;
 }
